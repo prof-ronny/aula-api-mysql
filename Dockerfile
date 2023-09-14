@@ -1,5 +1,5 @@
 # Use a imagem oficial do Node.js
-FROM node:14
+FROM node:16
 
 # Crie um diretório de trabalho no contêiner
 WORKDIR /app
@@ -16,8 +16,9 @@ EXPOSE 3000
 
 #BD
 CMD ["node", "script.js"]
+CMD ["echo", "Banco Criado"]
 
 # Inicie o aplicativo quando o contêiner for iniciado
 
-#BD
+#APP
 CMD ["node", "app.js"]
