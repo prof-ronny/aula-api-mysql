@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 const dbConfig = {
-  host: 'mysql-host', // Use o nome do host do seu contêiner MySQL
+  host: 'mysql', // Use o nome do host do seu contêiner MySQL
   user: 'root',
   password: 'password',
   database: 'mydb',

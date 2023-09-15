@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 async function createDatabase() {
   try {
     const connection = await mysql.createConnection({
-      host: 'mysql-host', // Use o nome do host do seu contêiner MySQL
+      host: 'mysql', // Use o nome do host do seu contêiner MySQL
       user: 'root',
       password: 'password',
     });
@@ -20,7 +20,7 @@ async function createDatabase() {
 async function createTables() {
   try {
     const connection = await mysql.createConnection({
-      host: 'mysql-host', // Use o nome do host do seu contêiner MySQL
+      host: 'mysql', // Use o nome do host do seu contêiner MySQL
       user: 'root',
       password: 'password',
       database: 'mydb',
@@ -43,18 +43,9 @@ async function createTables() {
   }
 }
 
-async function deployApp() {
-  try {
-    // Coloque aqui o código de implantação do aplicativo Node.js,
-    // por exemplo, criar um contêiner Docker, iniciar o aplicativo, etc.
-    console.log('Implantação do aplicativo Node.js concluída.');
-  } catch (error) {
-    console.error('Erro na implantação do aplicativo Node.js:', error);
-  }
-}
+
 
 // Chame as funções na ordem desejada
 createDatabase()
   .then(() => createTables())
-  .then(() => deployApp())
   .catch((error) => console.error('Erro geral:', error));

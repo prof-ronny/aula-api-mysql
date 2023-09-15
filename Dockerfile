@@ -14,11 +14,9 @@ COPY . /app/
 # Exponha a porta que o aplicativo irá ouvir
 EXPOSE 3000
 
-#BD
-CMD ["node", "script.js"]
-CMD ["echo", "Banco Criado"]
+
 
 # Inicie o aplicativo quando o contêiner for iniciado
 
 #APP
-CMD ["node", "app.js"]
+CMD ["/bin/bash", "-c", "node script.js;node app.js"]
