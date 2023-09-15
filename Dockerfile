@@ -14,9 +14,7 @@ COPY . /app/
 # Exponha a porta que o aplicativo irá ouvir
 EXPOSE 3000
 
-
-
 # Inicie o aplicativo quando o contêiner for iniciado
 
 #APP
-CMD ["/bin/bash", "-c", "node script.js;node app.js"]
+CMD ["/bin/bash", "-c", "sleep 15;node script.js;node app.js"]
