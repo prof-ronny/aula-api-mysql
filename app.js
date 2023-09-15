@@ -3,12 +3,12 @@ const express = require('express');
 const mysql = require('mysql2/promise');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
 const dbConfig = {
-  host: 'mysql-host', // Use o nome do host do seu contêiner MySQL
+  host: 'mysql', // Use o nome do host do seu contêiner MySQL
   user: 'root',
   password: 'password',
   database: 'mydb',

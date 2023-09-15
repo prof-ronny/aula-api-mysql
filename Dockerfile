@@ -1,5 +1,5 @@
 # Use a imagem oficial do Node.js
-FROM node:14
+FROM node:16
 
 # Crie um diretório de trabalho no contêiner
 WORKDIR /app
@@ -15,4 +15,6 @@ COPY . /app/
 EXPOSE 3000
 
 # Inicie o aplicativo quando o contêiner for iniciado
-CMD ["node", "app.js"]
+
+#APP
+CMD ["/bin/bash", "-c", "sleep 15;node script.js;node app.js"]
